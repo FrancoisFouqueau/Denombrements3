@@ -10,19 +10,19 @@ namespace Denombrements
     {
         static void Main(string[] args)
         {
-            int c = 1;
-            while (c != 0)
+            int choixOperation = 1;
+            while (choixOperation != 0)
             {
                 Console.WriteLine("Permutation ...................... 1");
                 Console.WriteLine("Arrangement ...................... 2");
                 Console.WriteLine("Combinaison ...................... 3");
                 Console.WriteLine("Quitter .......................... 0");
                 Console.Write("Choix :                            ");
-                c = int.Parse(Console.ReadLine());
+                choixOperation = int.Parse(Console.ReadLine());
 
-                if (c == 0) { Environment.Exit(0); }
+                if (choixOperation == 0) { Environment.Exit(0); }
 
-                if (c == 1)
+                if (choixOperation == 1)
                 {
                     Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
                     int n = int.Parse(Console.ReadLine()); // saisir le nombre
@@ -34,7 +34,7 @@ namespace Denombrements
                 }
                 else
                 {
-                    if (c == 2)
+                    if (choixOperation == 2)
                     {
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
                         int t = int.Parse(Console.ReadLine()); // saisir le nombre
