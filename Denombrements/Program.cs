@@ -8,6 +8,7 @@ namespace Denombrements
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
             int choixOperation = 1;
@@ -18,19 +19,31 @@ namespace Denombrements
                 Console.WriteLine("Combinaison ...................... 3");
                 Console.WriteLine("Quitter .......................... 0");
                 Console.Write("Choix :                            ");
-                choixOperation = int.Parse(Console.ReadLine());
+                bool boucleTry = false;
+                while (!boucleTry)
+
+                try
+                {
+                    choixOperation = int.Parse(Console.ReadLine());
+                        boucleTry = true;
+
+                }
+                catch
+                {
+                    Console.WriteLine("Entrez 0, 1, 2 ou 3");
+                }
 
                 if (choixOperation == 0) { Environment.Exit(0); }
 
                 if (choixOperation == 1)
                 {
+                    
                     Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
                     int n = int.Parse(Console.ReadLine()); // saisir le nombre
-                                                           // calcul de r
-                    long resultatChoix1 = 1;
+                    //long n = 1;
                     for (int k = 1; k <= n; k++)
-                        resultatChoix1 *= k;
-                    Console.WriteLine(n + "! = " + resultatChoix1);
+                        n *= k;
+                    Console.WriteLine(n + "! = " + n);
                 }
                 else
                 {
@@ -47,7 +60,7 @@ namespace Denombrements
                         //Console.WriteLine("résultat = " + (r1 / r2));
                         Console.WriteLine("A(" + t + "/" + n + ") = " + r);
                     }
-                    else
+                    if (choixOperation == 3)
                     {
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
                         int t = int.Parse(Console.ReadLine()); // saisir le nombre
@@ -64,6 +77,10 @@ namespace Denombrements
                         // calcul de r3
                         //Console.WriteLine("résultat = " + (r1 / r2));
                         Console.WriteLine("C(" + t + "/" + n + ") = " + (r1 / r2));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Hé, un entier entre 0 et 3!");
                     }
                 }
             }
