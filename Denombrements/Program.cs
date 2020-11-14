@@ -27,10 +27,10 @@ namespace Denombrements
                     Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
                     int n = int.Parse(Console.ReadLine()); // saisir le nombre
                                                            // calcul de r
-                    long r = 1;
+                    long resultatChoix1 = 1;
                     for (int k = 1; k <= n; k++)
-                        r *= k;
-                    Console.WriteLine(n + "! = " + r);
+                        resultatChoix1 *= k;
+                    Console.WriteLine(n + "! = " + resultatChoix1);
                 }
                 else
                 {
