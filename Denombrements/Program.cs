@@ -32,57 +32,58 @@ namespace Denombrements
                 {
                     Console.WriteLine("Entrez 0, 1, 2 ou 3");
                 }
-
-                if (choixOperation == 0) { Environment.Exit(0); }
-
-                if (choixOperation == 1)
+                switch (choixOperation)
                 {
-                    
-                    Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
-                    int n = int.Parse(Console.ReadLine()); // saisir le nombre
-                    //long n = 1;
-                    for (int k = 1; k <= n; k++)
-                        n *= k;
-                    Console.WriteLine(n + "! = " + n);
-                }
-                else
-                {
-                    if (choixOperation == 2)
-                    {
+                    case 0:
+                        Environment.Exit(0);
+                        break;
+
+                    case 1:
+
+                        Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
+                        int n = int.Parse(Console.ReadLine()); // saisir le nombre
+                                                               //long n = 1;
+                        for (int k = 1; k <= n; k++)
+                            n *= k;
+                        Console.WriteLine(n + "! = " + n);
+                        break;
+
+                    case 2:
+
+
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
                         int t = int.Parse(Console.ReadLine()); // saisir le nombre
                         Console.Write("nombre d'éléments dans le sous ensemble = "); // le sous ensemble
-                        int n = int.Parse(Console.ReadLine()); // saisir le nombre
+                        int sousEnsemble = int.Parse(Console.ReadLine()); // saisir le nombre
                         // calcul de r
                         long r = 1;
-                        for (int k = (t - n + 1); k <= t; k++)
+                        for (int k = (t - sousEnsemble + 1); k <= t; k++)
                             r *= k;
                         //Console.WriteLine("résultat = " + (r1 / r2));
-                        Console.WriteLine("A(" + t + "/" + n + ") = " + r);
-                    }
-                    if (choixOperation == 3)
-                    {
+                        Console.WriteLine("A(" + t + "/" + sousEnsemble + ") = " + r);
+                        break;
+
+                    case 3:
+
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
-                        int t = int.Parse(Console.ReadLine()); // saisir le nombre
+                        int nombreTotal = int.Parse(Console.ReadLine()); // saisir le nombre
                         Console.Write("nombre d'éléments dans le sous ensemble = "); // le sous ensemble
-                        int n = int.Parse(Console.ReadLine()); // saisir le nombre
+                        int sousEnsemble2 = int.Parse(Console.ReadLine()); // saisir le nombre
                         // calcul de r1
                         long r1 = 1;
-                        for (int k = (t - n + 1); k <= t; k++)
+                        for (int k = (nombreTotal - sousEnsemble2 + 1); k <= nombreTotal; k++)
                             r1 *= k;
                         // calcul de r2
                         long r2 = 1;
-                        for (int k = 1; k <= n; k++)
+                        for (int k = 1; k <= sousEnsemble2; k++)
                             r2 *= k;
                         // calcul de r3
                         //Console.WriteLine("résultat = " + (r1 / r2));
-                        Console.WriteLine("C(" + t + "/" + n + ") = " + (r1 / r2));
-                    }
-                    else
-                    {
-                        Console.WriteLine("Hé, un entier entre 0 et 3!");
-                    }
+                        Console.WriteLine("C(" + nombreTotal + "/" + sousEnsemble2 + ") = " + (r1 / r2));
+                        break;
+
                 }
+                
             }
             Console.ReadLine();
         }
