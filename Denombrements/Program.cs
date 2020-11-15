@@ -31,7 +31,42 @@ namespace Denombrements
                 {
                     Console.WriteLine("Entrez 0, 1, 2 ou 3");
                 }
-               
+               void methode(int nombre)
+                {
+                    Console.WriteLine("Vous avez choisi " + nombre);
+                }
+                //methode saisirEntier
+                int saisirEntier()
+                {
+                    int erreur2 = 0;
+                    // bool testEntier = false;
+                    // while (!testEntier)
+                    //{
+                    Console.WriteLine("Entrer un entier");
+                    try
+                    {
+                        int entier;
+                        entier = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Dans la methode : " + entier);
+                        //testEntier = true;
+                        return entier;
+                    }
+                    catch
+                    {
+                        int erreur = 0;
+                        Console.WriteLine("oops");
+                        return erreur;
+                    }
+                    return erreur2;
+                    // }
+
+
+                }
+
+
+                int ent;
+                ent = saisirEntier();
+                Console.WriteLine("Dans le programme principal, l'entier est : " + ent);
                 switch (choixOperation)
                 {
                     case 0:
@@ -41,9 +76,9 @@ namespace Denombrements
                     case 1:
 
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
-                        
-                        int n = int.Parse(Console.ReadLine()); 
-                        
+
+                        //int n = int.Parse(Console.ReadLine());
+                        int n = saisirEntier();
                         for (int k = 1; k <= n; k++)
                             n *= k;
                         Console.WriteLine(n + "! = " + n);
