@@ -26,12 +26,12 @@ namespace Denombrements
                 {
                     choixOperation = int.Parse(Console.ReadLine());
                         boucleTry = true;
-
                 }
                 catch
                 {
                     Console.WriteLine("Entrez 0, 1, 2 ou 3");
                 }
+               
                 switch (choixOperation)
                 {
                     case 0:
@@ -41,15 +41,15 @@ namespace Denombrements
                     case 1:
 
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
-                        int n = int.Parse(Console.ReadLine()); // saisir le nombre
-                                                               //long n = 1;
+                        
+                        int n = int.Parse(Console.ReadLine()); 
+                        
                         for (int k = 1; k <= n; k++)
                             n *= k;
                         Console.WriteLine(n + "! = " + n);
                         break;
 
                     case 2:
-
 
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
                         int t = int.Parse(Console.ReadLine()); // saisir le nombre
